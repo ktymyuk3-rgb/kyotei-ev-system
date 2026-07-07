@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>競艇EV 収支ダッシュボード</title>
+<style>
+body{font-family:'Hiragino Kaku Gothic ProN',sans-serif;background:#0d1b31;color:#e8edf5;
+padding:16px;max-width:640px;margin:0 auto}
+h1{font-size:18px} h2{font-size:13px;color:#6fd3dd;letter-spacing:.12em;margin:22px 0 8px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.stat{background:rgba(20,34,58,.85);border:1px solid rgba(120,160,210,.16);
+border-radius:12px;padding:12px}
+.stat .l{font-size:10px;color:#8fa3bf} .stat .v{font-size:22px;font-weight:800;margin-top:2px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{padding:7px 5px;border-bottom:1px solid rgba(120,160,210,.12);text-align:center}
+th{color:#6fd3dd;font-size:10px;letter-spacing:.08em}
+.combo{font-weight:800} .hit{color:#4ade80;font-weight:800} .miss{color:#5b6b84}
+.warn{background:rgba(60,40,20,.5);border:1px solid rgba(245,197,24,.3);border-radius:10px;
+padding:10px 12px;font-size:11px;color:#d9c48a;line-height:1.7;margin-top:18px}
+</style></head><body>
+<h1>競艇EV 収支ダッシュボード</h1>
+<p style="font-size:11px;color:#8fa3bf">1点100円購入想定のシミュレーション / 更新: 2026-07-08 06:42</p>
+<div class="stats">
+<div class="stat"><div class="l">通算損益</div><div class="v" style="color:#f87171">-15,360円</div></div>
+<div class="stat"><div class="l">回収率</div><div class="v" style="color:#f87171">83.4%</div></div>
+<div class="stat"><div class="l">的中 / 購入点数</div><div class="v">21 / 928</div></div>
+<div class="stat"><div class="l">的中率</div><div class="v">2.3%</div></div>
+</div>
+<h2>日別収支</h2>
+<table><tr><th>日付</th><th>点数</th><th>的中</th><th>損益</th></tr><tr><td>20260707</td><td>928</td><td>21</td><td>-15,360円</td></tr></table>
+<h2>直近の照合結果(最大50件)</h2>
+<table><tr><th>日付</th><th>レース</th><th>買い目</th><th>結果</th><th>的中組番</th><th>損益</th></tr>
+<tr><td>07/07</td><td>三国6R</td><td class='combo'>1-4-5</td><td class='miss'>×</td><td>5-1-6</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>びわこ7R</td><td class='combo'>1-2-3</td><td class='miss'>×</td><td>2-3-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>大村8R</td><td class='combo'>2-1-3</td><td class='miss'>×</td><td>2-1-5</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>住之江3R</td><td class='combo'>1-3-6</td><td class='miss'>×</td><td>4-6-2</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>桐生4R</td><td class='combo'>1-2-3</td><td class='miss'>×</td><td>2-3-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>大村8R</td><td class='combo'>2-3-1</td><td class='miss'>×</td><td>2-1-5</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>平和島8R</td><td class='combo'>5-1-4</td><td class='miss'>×</td><td>2-1-5</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>三国10R</td><td class='combo'>3-2-4</td><td class='miss'>×</td><td>3-5-1</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>常滑8R</td><td class='combo'>1-3-2</td><td class='miss'>×</td><td>2-3-6</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>住之江12R</td><td class='combo'>1-3-5</td><td class='miss'>×</td><td>2-3-1</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>尼崎11R</td><td class='combo'>1-5-6</td><td class='miss'>×</td><td>4-5-2</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>三国10R</td><td class='combo'>3-4-2</td><td class='miss'>×</td><td>3-5-1</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>平和島5R</td><td class='combo'>1-3-4</td><td class='miss'>×</td><td>2-3-5</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>多摩川9R</td><td class='combo'>1-3-5</td><td class='miss'>×</td><td>3-5-6</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>桐生7R</td><td class='combo'>1-4-2</td><td class='miss'>×</td><td>1-3-5</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>多摩川2R</td><td class='combo'>2-4-1</td><td class='miss'>×</td><td>1-4-6</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>三国6R</td><td class='combo'>1-2-6</td><td class='miss'>×</td><td>5-1-6</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>びわこ11R</td><td class='combo'>1-5-4</td><td class='miss'>×</td><td>1-6-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>桐生4R</td><td class='combo'>4-3-2</td><td class='miss'>×</td><td>2-3-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>住之江6R</td><td class='combo'>1-5-2</td><td class='hit'>○</td><td>1-5-2</td><td>+1,430円</td></tr>
+<tr><td>07/07</td><td>住之江3R</td><td class='combo'>1-2-3</td><td class='miss'>×</td><td>4-6-2</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>多摩川11R</td><td class='combo'>1-5-4</td><td class='miss'>×</td><td>5-3-2</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>大村9R</td><td class='combo'>1-3-4</td><td class='miss'>×</td><td>1-2-3</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>徳山7R</td><td class='combo'>4-5-3</td><td class='miss'>×</td><td>3-5-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>徳山5R</td><td class='combo'>1-3-4</td><td class='miss'>×</td><td>1-3-5</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>三国4R</td><td class='combo'>1-3-5</td><td class='miss'>×</td><td>1-5-2</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>三国7R</td><td class='combo'>2-1-6</td><td class='miss'>×</td><td>1-3-2</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>びわこ11R</td><td class='combo'>2-4-1</td><td class='miss'>×</td><td>1-6-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>常滑3R</td><td class='combo'>3-1-6</td><td class='miss'>×</td><td>1-6-2</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>尼崎3R</td><td class='combo'>1-2-3</td><td class='miss'>×</td><td>2-1-3</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>平和島5R</td><td class='combo'>1-4-2</td><td class='miss'>×</td><td>2-3-5</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>大村3R</td><td class='combo'>2-4-1</td><td class='miss'>×</td><td>2-5-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>大村7R</td><td class='combo'>4-2-1</td><td class='miss'>×</td><td>4-1-5</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>戸田2R</td><td class='combo'>2-3-1</td><td class='miss'>×</td><td>5-1-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>戸田2R</td><td class='combo'>1-3-2</td><td class='miss'>×</td><td>5-1-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>徳山4R</td><td class='combo'>1-3-6</td><td class='miss'>×</td><td>5-4-1</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>三国12R</td><td class='combo'>1-3-2</td><td class='miss'>×</td><td>1-2-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>びわこ10R</td><td class='combo'>3-1-2</td><td class='miss'>×</td><td>3-1-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>大村5R</td><td class='combo'>1-5-4</td><td class='miss'>×</td><td>1-3-5</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>徳山7R</td><td class='combo'>4-1-2</td><td class='miss'>×</td><td>3-5-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>大村9R</td><td class='combo'>1-2-4</td><td class='miss'>×</td><td>1-2-3</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>桐生3R</td><td class='combo'>3-1-2</td><td class='miss'>×</td><td>2-3-6</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>戸田3R</td><td class='combo'>2-4-1</td><td class='miss'>×</td><td>4-6-2</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>平和島3R</td><td class='combo'>3-2-1</td><td class='miss'>×</td><td>3-4-6</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>びわこ11R</td><td class='combo'>3-1-2</td><td class='miss'>×</td><td>1-6-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>若松10R</td><td class='combo'>1-2-5</td><td class='miss'>×</td><td>1-4-3</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>徳山7R</td><td class='combo'>3-1-4</td><td class='miss'>×</td><td>3-5-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>大村6R</td><td class='combo'>2-1-4</td><td class='miss'>×</td><td>2-3-1</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>尼崎2R</td><td class='combo'>1-3-2</td><td class='miss'>×</td><td>1-2-4</td><td>-100円</td></tr>
+<tr><td>07/07</td><td>大村11R</td><td class='combo'>1-2-4</td><td class='hit'>○</td><td>1-2-4</td><td>+5,070円</td></tr></table>
+<div class="warn">⚠ 回収率が100%を下回り続ける場合、それがこのモデルの実力です。
+閾値やモデルを調整する前に、まず十分なサンプル数(最低100点以上)を貯めて判断してください。
+数日の結果で「勝てる/勝てない」を判断するのはどちらの方向でも誤りです。</div>
+</body></html>

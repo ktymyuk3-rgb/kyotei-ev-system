@@ -27,6 +27,7 @@ kyotei_daily_screener.py が出力した ev_report_YYYYMMDD.csv を読み込み�
 
 import argparse
 import csv
+import html
 import re
 import sys
 import time
@@ -88,12 +89,15 @@ def fetch_trifecta_result(sess, date_str, stadium, race_no):
     if resp is None or resp.status_code != 200:
         return None, None
     # HTMLからタグを除去してテキスト化し、「3連単 → 組番 → 金額」の並びを正規表現で拾う
+    # &yen; 等のHTMLエンティティはunescapeしないと ¥ にマッチしないので先にデコードする。
     text = re.sub(r"<[^>]+>", " ", resp.text)
+    text = html.unescape(text)
     text = re.sub(r"\s+", " ", text)
     m = re.search(r"3連単\s*(\d)\s*-\s*(\d)\s*-\s*(\d)\s*[¥\\]?\s*([\d,]+)", text)
     if not m:
-        # レース不成立・返還等のケース
-        if "不成立" in text or "返還" in text:
+        # レース不成立・返還等のケース。「返還」は水面気象情報欄の「スタンド返還」等
+        # レース結果と無関係な箇所にも出現するため、「3連単」の直後にあるかで判定する。
+        if re.search(r"3連単\s*(不成立|返還)", text):
             return "不成立", 0
         print(f"  [警告] {STADIUM_NAMES.get(stadium, stadium)}{race_no}R: "
               f"結果を解析できませんでした(未確定またはHTML構造変化)", file=sys.stderr)
