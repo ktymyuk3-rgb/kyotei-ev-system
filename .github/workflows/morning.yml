@@ -1,0 +1,47 @@
+# 毎朝9時(日本時間)に全レースをスキャンして期待値レポートを生成
+# GitHub Actionsのcronは UTC 指定のため、JST 9:00 = UTC 0:00
+name: morning-screener
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch: {} # 手動実行ボタンも有効化(テスト用)
+
+concurrency:
+  group: kyotei
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90 # 全場スキャンは30分以上かかるため余裕を持たせる
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 依存ライブラリのインストール
+        run: pip install -r requirements.txt
+
+      - name: スクリーナー実行(レポートは docs/ へ出力)
+        run: python kyotei_daily_screener.py --out docs
+
+      - name: 最新レポートを latest.html としてもコピー
+        run: |
+          TODAY=$(TZ=Asia/Tokyo date +%Y%m%d)
+          if [ -f "docs/ev_report_${TODAY}.html" ]; then
+            cp "docs/ev_report_${TODAY}.html" docs/latest.html
+          fi
+
+      - name: 結果をコミット
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git diff --cached --quiet || git commit -m "morning report $(TZ=Asia/Tokyo date +%Y-%m-%d)"
+          git push
